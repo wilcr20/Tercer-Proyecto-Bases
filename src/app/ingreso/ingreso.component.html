@@ -1,0 +1,61 @@
+<div class="card_center">
+
+    <div class=" card text-white  text-center bg-info mb-3" style="max-width: 18rem;">
+        <div class="card-header">I Proyecto Bases de Datos II</div>
+        <div class="card-body">
+            <h4 style="color:rgb(97, 46, 46)" class="card-title">Estudiantes</h4>
+            <br>
+            <blockquote style="color:black" class="card-text">Wilfred Alvarado Maltez</blockquote>
+            <blockquote style="color:black" class="card-text">Marco Esquivel Vargas</blockquote>
+            <blockquote style="color:black" class="card-text">Kervin Sibaja Rodriguez</blockquote>
+            <br>
+        </div>
+    </div>
+
+    <div style="padding-left: 10px;">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Empezar ahora</button>
+    </div>
+
+
+    <div class="modal fade special-card" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModallLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModal">Ingrese los credenciales solicitados</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label class="col-form-label">Ip del Servidor Central:</label>
+                            <input type="text" [(ngModel)]="ipServer" name="ipServer" placeholder="Ej: 127.0.0.1" class="form-control" id="ip-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Base de datos:</label>
+                            <input type="text" [(ngModel)]="database" name="database" class="form-control" id="dbname" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Usuario:</label>
+                            <input type="text" [(ngModel)]="user" name="user" class="form-control" id="username">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Contraseña:</label>
+                            <input type="text" [(ngModel)]="pasw" name="pasw" class="form-control" id="pass">
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="closemodal" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" (click)="conect()" class="btn btn-success">Conectar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
