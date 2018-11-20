@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-    background: url("http://www.floreschapa.mx/images/Descargar%20Pack%20Wallpaper%20Gratis%20Abstractos%20(5).jpg") no-repeat center center fixed;
+    background: url("https://image.freepik.com/foto-gratis/fondo-negro_1205-436.jpg?1") no-repeat center center fixed;
     background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;
@@ -20,4 +20,10 @@ body {
 li:hover {
     background-color: gray;
     color: azure;
+}
+
+.forMapa {
+    float: left;
+    padding-bottom: 70px;
+    /*padding-right: 70%;*/
 }

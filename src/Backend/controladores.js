@@ -9,6 +9,13 @@ exports.conectarServer = function(req, res) {
     });
 };
 
+exports.obtenerTablas = function(req, res) {
+    logica.obtenerTablas(function(data) {
+        res.send(data);
+        res.end();
+    });
+};
+
 
 // exports.conectarNodo = function(req, res) {
 //     logica.conectarNodo(req, function(data) {
@@ -25,12 +32,7 @@ exports.conectarServer = function(req, res) {
 //     });
 // };
 
-// exports.obtenerTablas = function(req, res) {
-//     logica.obtenerTablas(req, function(data) {
-//         res.send(data);
-//         res.end();
-//     });
-// };
+
 
 // exports.obtenerPrivilegiosTablas = function(req, res) {
 //     logica.obtenerPrivilegiosTablas(req, function(data) {

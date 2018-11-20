@@ -1,3 +1,50 @@
-<p>
-  home works!
-</p>
+<div>
+    <button type="button" class="btn btn-info" (click)="verNuevo()" style="padding-right:35px">Ver/Crear Nuevo WS.</button>
+    <button type="button" class="btn btn-light" (click)="verWS()" style="padding-right:35px">Ver mis WS.</button>
+</div>
+
+<form class="forMapa" *ngIf="nuevoForm">
+
+    <div class="form-group" style="background-color: beige" *ngIf="tablasUser.length==0">
+        <label for="exampleFormControlSelect1">UST NO POSEE MAPAS ASIGNADOS AÜN!</label>
+    </div>
+    <div class="form-group" style="background-color: beige" *ngIf="tablasUser.length>0">
+        <label for="exampleFormControlSelect1">Mapas a utilizar</label>
+        <select class="form-control" id="mapa">
+          <option *ngFor="let mp of tablasUser">{{mp.table_name}}</option>
+        </select>
+    </div>
+    <div class="form-group" style="background-color: beige">
+        <label for="exampleFormControlInput1">Color a utilizar</label>
+        <input type="color" value='#c1c1c1' class="form-control" id="color">
+    </div>
+
+    <div class="form-group" style="background-color: beige">
+        <label for="exampleFormControlInput1">Opacidad</label>
+        <input type="range" value='50' min="0" max="100" class="form-control" id="opacity">
+    </div>
+    <div>
+        <button type="button" class="btn btn-success btn-sm" (click)="generaMapa()">Mostrar mapa</button>
+    </div>
+    <br><br>
+    <div *ngIf="btnSaveWS" style="padding-bottom:10px">
+        <input type="text" placeholder="Nombew del WS a guardar!" class="form-control" id="name">
+        <button type="button" class="btn btn-success btn-sm" (click)="generaMapa()">Guardar WS</button>
+    </div>
+</form>
+
+
+
+
+<!--
+<div>
+    LaTabla a utilizar:</td>
+    <td><input value='fincastec' type="text" id="input_tablename" required></td>
+
+    <td>Color:</td>
+    <td><input value='#c1c1c1' type="color" id="input_color" required></td>
+
+    <td>Opacity:</td>
+    <td><input value='50' type="range" min="0" max="100" id="input_opacity" required></td>
+
+</div> -->

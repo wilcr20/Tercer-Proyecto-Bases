@@ -23,14 +23,12 @@ app.use(function(req, res, next) {
 
 app.put('/conectar', ctrl.conectarServer);
 
-
+app.get('/obtenerTablas', ctrl.obtenerTablas);
 
 
 // app.put('/conectarNodo', ctrl.conectarNodo);
 
 // app.put('/obtenerSchemas', ctrl.obtenerSchema);
-
-// app.put('/obtenerTablas', ctrl.obtenerTablas);
 
 // app.put('/obtenerPrivilegiosTablas', ctrl.obtenerPrivilegiosTablas);
 

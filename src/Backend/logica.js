@@ -38,8 +38,28 @@ creaDbLink = function() {
         }
 
     }); // crea extension dblink
-
 }
+
+
+
+exports.obtenerTablas = function obtenerTablas(callback) { // realiza conexion dblink recibiendo una tabla con varios atributos
+    console.log("obtenerTablas");
+    client.query("select table_schema,table_name,privilege_type from information_schema.role_table_grants", (err, res) => {
+
+        if (err) {
+            console.log("Error de obtencion tablas.");
+            callback(false);
+
+        } else {
+            //console.log("\n\nResultados de tablas: \n", res.rows);
+            callback(res.rows); // res.row obtiene la tabla de los resultados obtenidos del query
+        }
+    })
+}
+
+
+
+
 
 
 
@@ -75,21 +95,7 @@ creaDbLink = function() {
 // }
 
 
-// exports.obtenerTablas = function obtenerTablas(data, callback) { // realiza conexion dblink recibiendo una tabla con varios atributos
-//     client.query("select * from dblink('host=" + data.body.server + " user=" + data.body.username + " password=" + data.body.pasw + " dbname=" + data.body.database + "','select distinct table_name from information_schema.column_privileges where table_schema = ''" + data.body.esquema + "'' ') as  tablas (nombre character varying);", (err, res) => {
 
-
-//         if (err) {
-//             console.log("Error de obtencion tablas de esquema.");
-//             callback(false);
-
-//         } else {
-//             console.log("\n\nResultados de tablas: \n", res.rows);
-//             callback(res.rows); // res.row obtiene la tabla de los resultados obtenidos del query
-//         }
-
-//     })
-// }
 
 
 // exports.obtenerPrivilegiosTablas = function obtenerPrivilegiosTablas(data, callback) { // realiza conexion dblink recibiendo una tabla con varios atributos

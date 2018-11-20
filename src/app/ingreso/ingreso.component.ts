@@ -19,8 +19,8 @@ export class IngresoComponent {
 
     // variables NGMODEl para validar form
    ipServer:string="localhost";
-   user:string ="postgres";
-   pasw:string="alvarado";
+   user:string ="wilfred";
+   pasw:string="123456";
    database:string='GIS';
 
 
