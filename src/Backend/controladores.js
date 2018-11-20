@@ -16,6 +16,13 @@ exports.obtenerTablas = function(req, res) {
     });
 };
 
+exports.obtenerTablaMapa = function(req, res) {
+    logica.obtenerTablaMapa(req, function(data) {
+        res.send(data);
+        res.end();
+    });
+};
+
 
 // exports.conectarNodo = function(req, res) {
 //     logica.conectarNodo(req, function(data) {

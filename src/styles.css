@@ -27,3 +27,22 @@ li:hover {
     padding-bottom: 70px;
     /*padding-right: 70%;*/
 }
+
+
+/* .mapa {
+    text-align: center;
+}
+
+.mapa div {
+    padding: 10px;
+    vertical-align: top;
+    text-align: center;
+    display: inline-block;
+} */
+
+#misvg {
+    float: right;
+    margin-right: 350px;
+    border: 1px solid rgb(12, 10, 102);
+    background: white;
+}

@@ -42,8 +42,9 @@ creaDbLink = function() {
 
 
 
+
+
 exports.obtenerTablas = function obtenerTablas(callback) { // realiza conexion dblink recibiendo una tabla con varios atributos
-    console.log("obtenerTablas");
     client.query("select table_schema,table_name,privilege_type from information_schema.role_table_grants", (err, res) => {
 
         if (err) {
@@ -58,6 +59,20 @@ exports.obtenerTablas = function obtenerTablas(callback) { // realiza conexion d
 }
 
 
+
+exports.obtenerTablaMapa = function obtenerTablaMapa(data, callback) { // realiza conexion dblink recibiendo una tabla con varios atributos
+    client.query("select * from " + data.body.n_schema + "." + data.body.n_tabla + ";", (err, res) => {
+        if (err) {
+            console.log("Error de obtencion  datos.");
+            callback(false);
+
+        } else {
+            // console.log("\n\nResultados de esquemas: \n", res.rows);
+            callback(res.rows); // res.row obtiene la tabla de los resultados obtenidos del query
+        }
+
+    })
+}
 
 
 
