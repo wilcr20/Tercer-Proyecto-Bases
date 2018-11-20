@@ -1,0 +1,51 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    background-color: rgb(243, 243, 243);
+}
+
+td
+{
+    text-align: left;
+}
+
+input
+{
+    padding: 3px;
+}
+
+input:valid
+{
+    border: 1px solid lightgray;
+}
+
+input:invalid
+{
+    border: 1px solid red;
+}
+
+.mapa
+{
+    text-align: center;    
+}
+
+.mapa div
+{
+    padding: 10px;
+    vertical-align: top;
+    text-align: center;
+    display: inline-block;
+}
+
+#misvg
+{
+    border: 1px solid lightgray;
+    background: white;
+}
+
+#coordenadas
+{
+    font-size: 0.8em;
+    font-style: italic;
+}

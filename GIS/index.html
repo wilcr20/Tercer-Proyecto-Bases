@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fincas TEC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body onload="init();">
+    <div class="mapa">
+        <div>
+            <svg width='500px' height='500px' id="misvg" >
+            </svg>
+                    
+        </div>
+        <div>
+            <table>
+                <tr><td>Host:</td><td><input value='localhost' type="text" id="input_host" required></td></tr>
+                <tr><td>Port:</td><td><input value='5432' type="number" id="input_port" required></td></tr>
+                <tr><td>DBname:</td><td><input value='gis' type="text" id="input_dbname" required></td></tr>
+                <tr><td>User:</td><td><input value='postgres' type="text" id="input_user" required></td></tr>
+                <tr><td>Password:</td><td><input value='12345' type="password" id="input_password" required></td></tr>
+                <tr><td>Schema:</td><td><input value='public' type="text" id="input_schema" required></td></tr>
+                <tr><td>TableName:</td><td><input value='fincastec' type="text" id="input_tablename" required></td></tr>
+                <tr><td>Color:</td><td><input value='#c1c1c1' type="color" id="input_color" required></td></tr>
+                <tr><td>Opacity:</td><td><input value='50' type="range"  min="0" max="100" id="input_opacity" required></td></tr>
+                <tr><td colspan="2"><button onclick="cargarCapa()">Agregar Capa</button></td></tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
