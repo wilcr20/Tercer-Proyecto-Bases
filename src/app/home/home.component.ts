@@ -207,8 +207,8 @@ export class HomeComponent {
       success => {
         //console.log("datos: ", success);
         this.geomMapa= success;
-        let xd= eval(this.geomMapa[0].geom.toString());
-        console.log(xd);
+        // let xd= eval(this.geomMapa[0].geom.toString());
+        // console.log(xd);
         //console.log(this.geomMapa);
       },
       err => {
