@@ -18,22 +18,27 @@ app.use(function(req, res, next) {
 });
 
 
+// Utilizar PUT si se envian datos en la consulta como JSON
+// Usar GEt si solo se desae conseguir datos de petición , sin envio de los mismos
 
 app.put('/conectar', ctrl.conectarServer);
 
-app.put('/conectarNodo', ctrl.conectarNodo);
 
-app.put('/obtenerSchemas', ctrl.obtenerSchema);
 
-app.put('/obtenerTablas', ctrl.obtenerTablas);
 
-app.put('/obtenerPrivilegiosTablas', ctrl.obtenerPrivilegiosTablas);
+// app.put('/conectarNodo', ctrl.conectarNodo);
 
-app.put('/obtenerPrivilegiosColumnas', ctrl.obtenerPrivilegiosColumnas);
+// app.put('/obtenerSchemas', ctrl.obtenerSchema);
 
-app.put('/enviarQuery', ctrl.enviarQuery);
+// app.put('/obtenerTablas', ctrl.obtenerTablas);
 
-app.put('/enviarQueryDistrib', ctrl.enviarQueryDistrib);
+// app.put('/obtenerPrivilegiosTablas', ctrl.obtenerPrivilegiosTablas);
+
+// app.put('/obtenerPrivilegiosColumnas', ctrl.obtenerPrivilegiosColumnas);
+
+// app.put('/enviarQuery', ctrl.enviarQuery);
+
+// app.put('/enviarQueryDistrib', ctrl.enviarQueryDistrib);
 
 app.get('/', function(req, res) {
     res.send('Servidor de NodeJs para proyecto Bases de datos II!');

@@ -21,7 +21,7 @@ export class IngresoComponent {
    ipServer:string="localhost";
    user:string ="postgres";
    pasw:string="alvarado";
-   database:string='proyectoBases';
+   database:string='GIS';
 
 
    conect() {  // meotod para realizar la conexion a DB con credenciales
@@ -34,6 +34,8 @@ export class IngresoComponent {
     }
 
 
+
+    // Realiza llamada al endpoint definido en server.js  .. y le envia un JSON de inforamcióna utilizar en consulta
     return this.http.put("http://localhost:3000/conectar",jsonConect)
     .subscribe(
       success => {
@@ -41,7 +43,13 @@ export class IngresoComponent {
         if(success == true){
           swal('Correcto...', "Ingreso Exitoso.", 'success');
           document.getElementById("closemodal").click();
-          this.router.navigate(['home']);  //  redirecciona a ruta
+          if(this.user == "postgres"){
+            console.log("Entra a page admin");  // redirecciona a ruta home admin
+            this.router.navigate(['admin']);  //  redirecciona a ruta home user
+          }else{
+            this.router.navigate(['home']);  //  redirecciona a ruta home user
+          }
+
         }else{
           swal('Incorecto...', "Ingreso erroneo. Verifique sus credenciales.", 'error');
         }

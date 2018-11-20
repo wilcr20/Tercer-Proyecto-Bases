@@ -7,7 +7,7 @@ exports.conecta = function() {
     const client = new Client({
         user: 'postgres',
         host: 'localhost',
-        database: 'proyectoBases',
+        database: 'GIS',
         password: 'alvarado',
         port: 5432,
     })
