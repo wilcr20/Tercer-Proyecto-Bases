@@ -5,9 +5,10 @@
 <br>
 
 <div class="mapa" *ngIf="showMapa">
-    <svg width='550px' height='550px' id="misvg">
+    <svg width='600px' height='600px' id="misvg">
     </svg>
 </div>
+
 
 <form class="forMapa" *ngIf="nuevoForm">
     <div class="form-group" style="background-color: beige" *ngIf="tablasUser.length==0">
@@ -29,10 +30,12 @@
     </div>
     <div>
         <button type="button" class="btn btn-success btn-sm" (click)="generaMapa()">Mostrar mapa</button>
+        <!-- <button *ngIf="btnSaveWS" type="button" class="btn btn-success btn-sm" (click)="limpiar()">Limpiar WS</button> -->
     </div>
     <br><br>
     <div *ngIf="btnSaveWS" style="padding-bottom:10px">
         <input type="text" placeholder="Nombew del WS a guardar!" class="form-control" id="name">
-        <button type="button" class="btn btn-success btn-sm" (click)="generaMapa()">Guardar WS</button>
+        <input type="date" value="" class="form-control" id="fecha">
+        <button type="button" class="btn btn-success btn-sm" (click)="guardarWS()">Guardar WS</button>
     </div>
 </form>

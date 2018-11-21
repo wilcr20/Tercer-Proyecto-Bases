@@ -61,7 +61,8 @@ exports.obtenerTablas = function obtenerTablas(callback) { // realiza conexion d
 
 
 exports.obtenerTablaMapa = function obtenerTablaMapa(data, callback) { // realiza conexion dblink recibiendo una tabla con varios atributos
-    client.query("select * from " + data.body.n_schema + "." + data.body.n_tabla + ";", (err, res) => {
+    client.query("select st_xmin(geom) xmin, st_xmax(geom) xmax, st_ymin(geom) ymin, st_ymax(geom) ymax, st_asgeojson(geom)::json as geom from " + data.body.n_schema + "." + data.body.n_tabla + ";", (err, res) => {
+        // client.query("select * from " + data.body.n_schema + "." + data.body.n_tabla + ";", (err, res) => {
         if (err) {
             console.log("Error de obtencion  datos.");
             callback(false);
