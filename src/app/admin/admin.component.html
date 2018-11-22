@@ -1,3 +1,29 @@
-<p>
-  admin works!
-</p>
+<form style="float:left; margin-left: 40%">
+    <div class="form-group">
+      <label for="exampleInputNameUser">Nombre de Usuario</label>
+      <input type="NameUser" class="form-control" id="exampleInputNameUser" placeholder="Enter Name User" id="inputnameUser">
+      
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password" id="inputpassword">
+    </div>
+
+     
+
+    <br>
+    <h1>Selecionar Mapas:</h1>
+    <div>
+        <input type="checkbox" id="edificios" checked> Edificios <br>
+        <input type="checkbox" id="fincastec" checked> Fincas<br>
+        <input type="checkbox" id="islas" checked> Islas<br>
+        <input type="checkbox" id="vialidad" checked> Vialidad<br>
+    </div>
+
+    <button type="submit" (click) = "createUser()" class="btn btn-primary"> Crear Usuario </button>
+    
+</form> 
+
+
+
+

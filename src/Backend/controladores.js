@@ -22,6 +22,13 @@ exports.obtenerTablaMapa = function(req, res) {
         res.end();
     });
 };
+exports.crearUsuario = function(req, res) {
+    console.log("1")
+    logica.crearUsuario(req, function(data) {
+        res.send(data);
+        res.end();
+    });
+};
 
 
 // exports.conectarNodo = function(req, res) {

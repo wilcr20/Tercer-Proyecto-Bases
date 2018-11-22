@@ -75,6 +75,35 @@ exports.obtenerTablaMapa = function obtenerTablaMapa(data, callback) { // realiz
     })
 }
 
+exports.crearUsuario = function crearUsuario(data, callback) { // realiza conexion dblink recibiendo una tabla con varios atributos
+    console.log("create role  " + data.body.nombre + " with login password '" + data.body.contraseña + "';"+
+    " grant select on usuarios to "+ data.body.nombre+ ";"+ 
+    " grant select on WS to "+ data.body.nombre+";"+
+    "grant insert (wsUser,idUser) on WS to "+data.body.nombre+";"+
+    data.body.sqlmapas)
+
+    
+    //create role mino with login password '12345'; grant select on usuarios to mino;grant select on WS to mino;grant insert (wsUser,idUser) on WS to mino;
+    client.query(
+    "create role  " + data.body.nombre + " with login password '" + data.body.contraseña + "';"+
+    " grant select on usuarios to "+ data.body.nombre+ ";"+ 
+    " grant select on WS to "+ data.body.nombre+";"+
+    "grant insert (wsUser,idUser) on WS to "+data.body.nombre+";"+
+    data.body.sqlmapas
+    , (err, res) => {
+        // client.query("select * from " + data.body.n_schema + "." + data.body.n_tabla + ";", (err, res) => {
+        if (err) {
+            console.log("Error de obtencion  datos.");
+            callback(false);
+
+        } else {
+            // console.log("\n\nResultados de esquemas: \n", res.rows);
+            callback(res.rows); // res.row obtiene la tabla de los resultados obtenidos del query
+        }
+
+    })
+}
+
 
 
 

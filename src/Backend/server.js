@@ -27,6 +27,8 @@ app.get('/obtenerTablas', ctrl.obtenerTablas);
 
 app.put('/obtenerTablaMapa', ctrl.obtenerTablaMapa);
 
+app.put('/crearUsuario', ctrl.crearUsuario);
+
 
 // app.put('/conectarNodo', ctrl.conectarNodo);
 

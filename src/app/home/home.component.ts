@@ -64,7 +64,7 @@ export class HomeComponent {
   generaMapa(){
     this.btnSaveWS= true;
     this.showMapa= true;
-    this.init();
+    this.init();  
 
   }
 
