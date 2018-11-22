@@ -25,6 +25,8 @@ app.put('/conectar', ctrl.conectarServer);
 
 app.get('/obtenerTablas', ctrl.obtenerTablas);
 
+app.put('/obtenerTablaMapa', ctrl.obtenerTablaMapa);
+
 
 // app.put('/conectarNodo', ctrl.conectarNodo);
 
